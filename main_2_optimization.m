@@ -1,14 +1,15 @@
 clear all;
 fLPSP_goal=10; %percent
 mutate_rate=20; %percent
-N=100;w=0.8;c1=2;c2=2;beta=2;T=50;
+N=200;w=0.8;c1=2;c2=2;beta=2;T=500;
 
+X0=300;
 V0=10;
         
 %initial value set
 for partindx=1:N
     while true 
-        particles_x(partindx,:)=200.*rand([1 3]);
+        particles_x(partindx,:)=X0.*rand([1 3]);
         particles_v(partindx,:)=V0.*rand([1 3]);
         particles_xp(partindx,:)=particles_x(partindx,:);
         if(particles_x(partindx,1)<0)
@@ -78,11 +79,12 @@ Nw=floor(particles_xg(1));
 Nb=floor(particles_xg(2));
 Npv=floor(particles_xg(3));
 [Nw,Nb,Npv]
-price_best(T+1)
 figure(1)
 % main_1_test_accuracy;
 % figure(2)
 plot(price_best)
-
+simulation;
+LCC
+fLPSP
 
 
