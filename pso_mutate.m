@@ -26,15 +26,6 @@ for iimm = 1:N
             particles_x(partindx,:)=X0.*rand([1 3]);
             particles_v(partindx,:)=V0.*rand([1 3]);
             particles_xp(partindx,:)=particles_x(partindx,:);
-            if(particles_x(partindx,1)<0)
-                particles_x(partindx,1)=0;
-            end
-            if(particles_x(partindx,2)<0)
-                particles_x(partindx,2)=0;
-            end
-            if(particles_x(partindx,3)<0)
-                particles_x(partindx,3)=0;
-            end
             Nw=floor(particles_x(partindx,1));
             Nb=floor(particles_x(partindx,2));
             Npv=floor(particles_x(partindx,3));
